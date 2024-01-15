@@ -1,0 +1,59 @@
+<br>
+<br>
+<br>
+<br>
+
+<div class="container mt-5 w-10">
+    <h2 style="text-align: center;">Liste des Musiques</h2>
+    <br>
+    <br>
+
+
+<button type="button" class="btn btn-success" routerLink="/creer" > Ajouter une musique
+
+</button>
+<br>
+<br>
+    <table class="table table-bordered table-hover table-responsive">
+        <thead class="thead-light">
+            <h1 *ngIf="!isResultLoaded">Chargement.................</h1>
+
+
+
+            <tr>
+              <th scope="col">Titre de la chanson</th>
+              <th scope="col">Nom de l'artiste</th>
+              <th scope="col">Noms des artistes associés</th>
+              <!-- <th scope="col">Pochette de l'Album</th>
+              <th scope="col">Lien de de la chanson</th> -->
+              <th scope="col">Prix de la chanson</th>
+              <th scope="col">Paroles</th>
+              <th scope="col">Actions</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ChansonItem of chanssonsArray">
+
+              <td class="text-truncate w-25">{{ChansonItem.titreChanson }}</td>
+              <td class="text-truncate w-25">{{ChansonItem.nomArtiste }}</td>
+              <td class="text-truncate w-25">
+                <ul>
+                  <li *ngFor="let collaborateur of ChansonItem.nomsaArtistescCollaborateurs">
+                    {{ collaborateur }}
+                  </li>
+                </ul>
+              </td>
+              <!-- <td class="text-truncate w-25">{{ChansonItem.pochetteAlbum }}</td>
+              <td class="text-truncate w-25">{{ChansonItem.chansonUrl }}</td> -->
+              <td class="text-truncate w-25">{{ChansonItem.prix }}</td>
+              <td class="text-truncate w-25">{{ChansonItem.lyrics }}</td>
+              <td class="text-truncate w-25">
+                <button type=" button" class="btn btn-primary " [routerLink]="['/modifier',ChansonItem.id]" >Modifier</button>
+                <button type="button" class="btn btn-danger mx-2" (click)="setDelete(ChansonItem)">Supprimer</button>
+              </td>
+
+            </tr>
+          </tbody>
+    </table>
+  </div>

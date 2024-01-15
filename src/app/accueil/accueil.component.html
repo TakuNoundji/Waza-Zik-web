@@ -1,0 +1,45 @@
+<br>
+
+
+
+<main class="container mt-5">
+  <h1 class="text-center mb-4">Bienvenue sur <span class="text-primary">WAZA </span>Zik</h1>
+<br>
+
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Cartes pour les informations aléatoires -->
+    <div class="col" *ngFor="let ChansonItem of chanssonsArray" >
+      <div class="card">
+        <img src="{{ChansonItem.pochetteAlbum }}" class="card-img-top" alt="Image 1">
+        <div class="card-body">
+          <h5 class="card-title">{{ChansonItem.titreChanson }}</h5>
+          <p class="card-text"> <b>Prix:</b> {{ChansonItem.prix }}</p>
+          <p class="card-text"> <b> Nom:</b> {{ChansonItem.nomArtiste }} </p>
+
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col">
+      <div class="card">
+        <img src="../../../assets/sake.jpg" class="card-img-top" alt="Image 1">
+        <div class="card-body">
+          <h5 class="card-title">Loin</h5>
+          <p class="card-text"> <b>Style:</b> Rnb | Hip-Hop </p>
+          <p class="card-text"> <b> Nom:</b> Ln.black </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="../../../assets/wassa.jpg" class="card-img-top" alt="Image 1">
+        <div class="card-body">
+          <h5 class="card-title">Bek</h5>
+          <p class="card-text">Rnb | Hip-Hop </p>
+          <p class="card-text"> <b> Nom:</b> Likfraiz </p>
+
+        </div>
+      </div>
+    </div> -->
+  </div>
+</main>
